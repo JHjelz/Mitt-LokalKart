@@ -3,12 +3,12 @@
 const CACHE_NAME = "mitt-lokalkart-v1";
 
 const FILES = [
-  "/",
-  "/index.html",
-  "/css/style.css",
+  "./",
+  "./index.html",
+  "./css/style.css",
 
-  "/js/app.js",
-  "/js/map.js",
+  "./js/app.js",
+  "./js/map.js",
 
   "https://unpkg.com/leaflet@1.9.4/dist/leaflet.css",
   "https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
