@@ -1,0 +1,29 @@
+/* MITT-LOKALKART/css/components.css */
+
+/* --- Styling for specific components --- */
+
+.title {
+    font-size: clamp(24px, 5vw, 64px);
+    text-align: center;
+}
+
+button {
+    padding: 8px 16px;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.icon {
+    color: green;
+    width: clamp(32px, 6vw, 80px);
+    height: clamp(32px, 6vw, 80px);
+}
+
+button, .icon {
+    transition: transform 0.15s ease, filter 0.15s ease;
+}
+
+button:hover, .icon:hover {
+    transform: scale(1.05);
+    filter: brightness(1.1);
+}
