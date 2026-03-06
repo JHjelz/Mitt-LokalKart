@@ -1,0 +1,22 @@
+/* MITT-LOKALKART/css/base.css */
+
+/* --- Base layout --- */
+
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+
+    font-family: monospace;
+    overflow-x: hidden;
+}
+
+* {
+    box-sizing: border-box;
+}

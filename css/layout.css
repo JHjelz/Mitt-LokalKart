@@ -1,0 +1,38 @@
+/* MITT-LOKALKART/css/layout.css */
+
+/* --- Page structure --- */
+
+#content {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.mainContent {
+    display: flex;
+    flex: 1;
+    min-height: 0;
+}
+
+/* --- Header --- */
+
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+
+/* --- Meny --- */
+
+#meny {
+    width: 250px;
+}
+
+/* --- Map --- */
+
+#map {
+    flex: 1;
+    width: 100%;
+    min-height: 300px;
+}
