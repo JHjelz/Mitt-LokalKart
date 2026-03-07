@@ -16,6 +16,7 @@ const FILES = [
 
   "./js/app.js",
   "./js/map.js",
+  "./js/scaleController.js",
 
   "./icons/icon-192.png",
   "./icons/icon-512.png"
@@ -61,7 +62,7 @@ self.addEventListener("fetch", event => {
                     if (event.request.destination == "document") {
                         return caches.match("/index.html");
                     }
-                    return new Response("Offline eller fil mangler", { status: 500 });
+                    return new Response("Offline eller fil mangler", { status: 503 });
                 });
             })
         );

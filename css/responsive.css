@@ -5,7 +5,7 @@
 @media (max-width: 700px) {
 
     .header {
-        flex-direction: column;
+        flex-direction: row;
         text-align: center;
     }
 
