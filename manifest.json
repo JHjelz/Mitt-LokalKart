@@ -1,7 +1,8 @@
 {
-  "name": "Mitt Lokalkart",
-  "short_name": "Lokalkart",
-  "start_url": ".",
+  "name": "Mitt LokalKart",
+  "short_name": "LokalKart",
+  "start_url": "/Mitt-LokalKart/index.html",
+  "scope": "./",
   "display": "standalone",
   "background_color": "#111111",
   "theme_color": "#111111",

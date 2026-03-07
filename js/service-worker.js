@@ -27,7 +27,7 @@ self.addEventListener("install", event => {
             const cache = await caches.open(CACHE_NAME);
             for (const file of FILES) {
                 try {
-                    await cache.add(file);
+                    await cache.add(new Request(file, { cache: "reload" }));
                 } catch (err) {
                     console.warn("Kan ikke cache fil:", file, err);
                 }
