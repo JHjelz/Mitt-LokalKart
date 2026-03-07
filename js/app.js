@@ -1,7 +1,7 @@
 // MITT-LOKALKART/js/app.js
 
 // Imports
-import { initMap } from "./map.js"
+import { initMap } from "./map/map.js"
 
 // Start appen
 document.addEventListener("DOMContentLoaded", () => {

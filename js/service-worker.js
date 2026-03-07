@@ -3,23 +3,22 @@
 const CACHE_NAME = "mitt-lokalkart-v1";
 
 const FILES = [
-  "./",
-  "./index.html",
-  "./favicon.ico",
-  "./manifest.json",
+  "index.html",
+  "favicon.ico",
+  "manifest.json",
 
-  "./css/base.css",
-  "./css/components.css",
-  "./css/layout.css",
-  "./css/responsive.css",
-  "./css/theme.css",
+  "css/base.css",
+  "css/components.css",
+  "css/layout.css",
+  "css/responsive.css",
+  "css/theme.css",
 
-  "./js/app.js",
-  "./js/map.js",
-  "./js/scaleController.js",
+  "js/app.js",
+  "js/map.js",
+  "js/scaleController.js",
 
-  "./icons/icon-192.png",
-  "./icons/icon-512.png"
+  "icons/icon-192.png",
+  "icons/icon-512.png"
 ];
 
 self.addEventListener("install", event => {
