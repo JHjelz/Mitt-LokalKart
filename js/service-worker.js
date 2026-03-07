@@ -23,9 +23,17 @@ const FILES = [
 
 self.addEventListener("install", event => {
     event.waitUntil(
-        caches.open(CACHE_NAME)
-        .then(cache => cache.addAll(FILES))
-        .then(() => self.skipWaiting())
+        (async () => {
+            const cache = await caches.open(CACHE_NAME);
+            for (const file of FILES) {
+                try {
+                    await cache.add(file);
+                } catch (err) {
+                    console.warn("Kan ikke cache fil:", file, err);
+                }
+            }
+            self.skipWaiting();
+        })()
     );
 });
 
@@ -47,19 +55,15 @@ self.addEventListener("fetch", event => {
 
     if (url.pathname === "/" || url.pathname.endsWith(".html")) {
         event.respondWith(
-            fetch(event.request)
+            caches.match(event.request)
             .then(response => {
-                const resClone = response.clone();
-                caches.open(CACHE_NAME).then(cache => cache.put(event.request, resClone));
-                return response;
+                return response || fetch(event.request).catch(()  => {
+                    if (event.request.destination == "document") {
+                        return caches.match("/index.html");
+                    }
+                    return new Response("Offline eller fil mangler", { status: 500 });
+                });
             })
-            .catch(() => caches.match(event.request))
         );
-        return;
     }
-
-    event.respondWith(
-        caches.match(event.request)
-        .then(response => response || fetch(event.request))
-    );
 });
