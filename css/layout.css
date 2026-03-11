@@ -1,7 +1,5 @@
 /* MITT-LOKALKART/css/layout.css */
 
-/* --- Page structure --- */
-
 #content {
     display: flex;
     flex-direction: column;
@@ -14,25 +12,43 @@
     min-height: 0;
 }
 
-/* --- Header --- */
-
 .header {
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 20px;
+    background-color: var(--primary-color);
+    color: var(--text-color);
+    border-bottom: 1px solid var(--border-color);
+    box-shadow: 0 4px 10px var(--shadow-color);
+    border-radius: 8px 8px 0 0;
+    padding: 12px 20px;
+    font-weight: bold;
 }
-
-/* --- Meny --- */
-
-#meny {
-    width: 250px;
-}
-
-/* --- Map --- */
 
 #map {
     flex: 1;
     width: 100%;
     min-height: 300px;
+    border-radius: 0 0 8px 8px;
+    box-shadow: 0 4px 12px var(--shadow-color);
+}
+
+#meny {
+    position: absolute;
+    left: calc(-1 * var(--menu-width));
+    top: 0;
+    width: var(--menu-width);
+    height: 100%;
+    transition: left var(--control-transition);
+    z-index: 1000;
+    padding: 10px;
+    overflow-y: auto;
+    background-color: var(--secondary-color);
+    box-shadow: 2px 0 6px var(--shadow-color);
+    border-radius: 0 0 8px 8px;
+}
+
+body.meny-open #meny {
+    left: 0;
 }

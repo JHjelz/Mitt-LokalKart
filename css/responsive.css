@@ -1,25 +1,36 @@
 /* MITT-LOKALKART/css/responsive.css */
 
-/* --- Adjustments for mobile and small screens --- */
-
 @media (max-width: 700px) {
-
-    .header {
-        flex-direction: row;
-        text-align: center;
-    }
 
     .mainContent {
         flex-direction: column;
     }
 
-    #meny {
-        width: 100%;
-        height: 120px;
-        order: 2;
-    }
-
     #map {
         order: 1;
+        width: 100%;
+        height: calc(100vh - var(--menu-height-mobile));
+    }
+
+    #meny {
+        width: 100%;
+        height: var(--menu-height-mobile);
+        top: auto;
+        bottom: calc(-1 * var(--menu-height-mobile));
+        left: 0;
+        order: 2;
+        border-radius: 0 0 8px 8px;
+        box-shadow: 0 -2px 6px var(--shadow-color);
+        transition: bottom var(--control-transition);
+    }
+
+    body.meny-open #meny {
+        bottom: 0;
+    }
+
+    /* Leaflet left controls */
+    .leaflet-left,
+    body.meny-open .leaflet-left {
+        left: 0 !important;
     }
 }

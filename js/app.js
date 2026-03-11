@@ -2,13 +2,16 @@
 
 // Imports
 import { initMap } from "./map/map.js"
+import { createLeftButtonContainer } from "./controls/buttonControl.js"
 
 // Start appen
 document.addEventListener("DOMContentLoaded", () => {
 
     console.log("Mitt lokalkart starter...");
     
-    initMap();
+    const map = initMap();
+    
+    createLeftButtonContainer(map);
     
     registerServiceWorker();
 })

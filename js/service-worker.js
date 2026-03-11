@@ -9,13 +9,13 @@ const FILES = [
 
   "css/base.css",
   "css/components.css",
+  "css/constants.css",
   "css/layout.css",
   "css/responsive.css",
-  "css/theme.css",
 
   "js/app.js",
-  "js/map.js",
-  "js/scaleController.js",
+  "js/map/map.js",
+  "js/map/scaleController.js",
 
   "icons/icon-192.png",
   "icons/icon-512.png"

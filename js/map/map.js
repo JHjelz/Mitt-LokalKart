@@ -1,4 +1,4 @@
-// MITT-LOKALKART/js/map.js
+// MITT-LOKALKART/js/map/map.js
 
 import { scaleRatioControl } from "./scaleController.js";
 
@@ -75,4 +75,6 @@ export function initMap(){
 
   // Legger til zoom
   L.control.zoom({position: 'bottomright'}).addTo(map);
+
+  return map;
 }

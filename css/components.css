@@ -1,32 +1,46 @@
 /* MITT-LOKALKART/css/components.css */
 
-/* --- Styling for specific components --- */
-
 .title {
     font-size: clamp(24px, 5vw, 128px);
     text-align: center;
     margin: 0;
 }
 
-button {
-    padding: 8px 16px;
-    cursor: pointer;
-    font-weight: 600;
-}
-
 .icon {
-    color: green;
     width: clamp(32px, 6vw, 80px);
     height: clamp(32px, 6vw, 80px);
+    color: var(--border-color);
 }
 
-button, .icon {
+button {
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    color: var(--border-color);
     transition: transform 0.15s ease, filter 0.15s ease;
 }
 
-button:hover, .icon:hover {
+button:hover {
     transform: scale(1.05);
     filter: brightness(1.1);
+}
+
+.meny-button {
+    width: var(--button-size);
+    height: var(--button-size);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 8px;
+    background: var(--primary-color);
+    box-shadow: 0 2px 6px var(--shadow-color);
+}
+
+.meny-button svg {
+    width: var(--button-icon-size);
+    height: var(--button-icon-size);
 }
 
 .scale-container {
@@ -36,10 +50,32 @@ button:hover, .icon:hover {
     display: flex;
     flex-direction: column;
     align-items: center;
+    background: var(--secondary-color);
+    border: 4px solid var(--border-color);
+    border-radius: 6px;
+    box-shadow: 0 1px 4px var(--shadow-color);
 }
 
 .scale-ratio {
     font-weight: bold;
     margin-bottom: 4px;
     text-align: center;
+}
+
+.button-container {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    align-items: flex-start;
+    z-index: 1500;
+}
+
+/* Leaflet left controls */
+.leaflet-left {
+    left: 0;
+    transition: left var(--control-transition);
+}
+
+body.meny-open .leaflet-left {
+    left: var(--menu-width);
 }

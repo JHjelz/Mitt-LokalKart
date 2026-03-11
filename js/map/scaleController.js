@@ -1,13 +1,27 @@
-// MITT-LOKALKART/js/scaleController.js
+// MITT-LOKALKART/js/map/scaleController.js
+
+import  { createDiv } from "../ui/createDiv.js";
 
 // Kontroller for målestokforhold 1:x
 const scaleRatio = L.Control.extend({
     onAdd: function(map) {
-        this._div = L.DomUtil.create("div", "scale-container");
-        this._ratioDiv = L.DomUtil.create("div", "scale-ratio", this._div);
+        
+        this._div = createDiv({
+            id: "scale-container",
+            className: "scale-container leaflet-control"
+        });
+
+        this._ratioDiv = createDiv({
+            id: "scale-ratio",
+            className: "scale-ratio"
+        });
+
+        this._div.appendChild(this._ratioDiv);
+
         this.update();
 
         map.on("zoomend moveend", this.update.bind(this));
+        
         return this._div;
     },
     
